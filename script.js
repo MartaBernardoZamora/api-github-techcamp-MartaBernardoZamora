@@ -47,11 +47,19 @@ let setData = async(url) =>{
             user_info.appendChild(datas);
 
             let repos_data = await getData(`${response.repos_url}?sort=created&direction=desc&per_page=5`);
+            console.log(repos_data);
             const repos = document.createElement('ul');
             repos_data.forEach(repo => {
                 let list= document.createElement('li');
                 list.classList.add('repo');
-                list.textContent=repo.name;
+
+                const link = document.createElement('a');
+                link.textContent = repo.name;
+                link.href = repo.html_url; 
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+
+                list.appendChild(link);                
                 repos.appendChild(list);
             });
             user_info.appendChild(repos);
