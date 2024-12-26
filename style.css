@@ -75,7 +75,8 @@ body {
 .user-info ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   padding: 0;
   max-width: 400px;
 }
@@ -83,11 +84,12 @@ body {
 .user-info ul li {
   display: flex;
   align-items: center;
+  margin-left: 0.5rem;
 }
 
 .user-info ul li strong {
   font-size: 0.9rem;
-  margin-left: 0.5rem;
+  margin-right: 0.2rem;
 }
 
 .repo {
